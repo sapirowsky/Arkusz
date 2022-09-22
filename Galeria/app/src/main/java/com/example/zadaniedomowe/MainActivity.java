@@ -69,24 +69,24 @@ public class MainActivity extends AppCompatActivity {
         EditText number = (EditText) findViewById(R.id.editTextNumber);
         number.setOnClickListener( new View.OnClickListener(){
             public void onClick(View v){
-                int numberFromInput = Integer.parseInt(number.getText().toString());
-                if(numberFromInput > 0 && numberFromInput < 5){
-                    if (numberFromInput == 1){
-                        image.setImageResource(R.drawable.kot1);
-                        image.setContentDescription("kot1");
-                    }else if(numberFromInput == 2) {
-                        image.setImageResource(R.drawable.kot2);
-                        image.setContentDescription("kot2");
-                    }else if(numberFromInput == 3){
-                        image.setImageResource(R.drawable.kot3);
-                        image.setContentDescription("kot3");
-                    }else{
-                        image.setImageResource(R.drawable.kot4);
-                        image.setContentDescription("kot4");
-                    }
+                String numberFromInput = number.getText().toString();
+
+                if (numberFromInput.equals("1")){
+                    image.setImageResource(R.drawable.kot1);
+                    image.setContentDescription("kot1");
+                }else if(numberFromInput.equals("2")) {
+                    image.setImageResource(R.drawable.kot2);
+                    image.setContentDescription("kot2");
+                }else if(numberFromInput.equals("3")){
+                    image.setImageResource(R.drawable.kot3);
+                    image.setContentDescription("kot3");
+                }else if(numberFromInput.equals("4")){
+                    image.setImageResource(R.drawable.kot4);
+                    image.setContentDescription("kot4");
                 }
             }
         });
+
         Switch colorSwitch = (Switch) findViewById(R.id.switch1);
         colorSwitch.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
